@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\musiccollections\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\musiccollections\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\musiccollections\\musiccollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\musiccollections\\musiccollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\artist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\artist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\models\\musiccollections\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:models\\musiccollections\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|c:\\users\\hodac\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u043E\u043E\u043F\\\u043B\u0430\u0431 2\\musiccatalog\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{BFED13F4-6492-4350-A962-124C6A7D817F}|MusicCatalog.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -23,6 +47,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Playlist.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\Playlist.cs",
+              "RelativeDocumentMoniker": "Models\\MusicCollections\\Playlist.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\Playlist.cs",
+              "RelativeToolTip": "Models\\MusicCollections\\Playlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:15:09.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Album.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\Album.cs",
+              "RelativeDocumentMoniker": "Models\\MusicCollections\\Album.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\Album.cs",
+              "RelativeToolTip": "Models\\MusicCollections\\Album.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:11:44.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Genre.cs",
+              "RelativeDocumentMoniker": "Models\\Genre.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Genre.cs",
+              "RelativeToolTip": "Models\\Genre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T14:09:11.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MusicCollection.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\MusicCollection.cs",
+              "RelativeDocumentMoniker": "Models\\MusicCollections\\MusicCollection.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\MusicCollections\\MusicCollection.cs",
+              "RelativeToolTip": "Models\\MusicCollections\\MusicCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T13:26:53.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Track.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Track.cs",
+              "RelativeDocumentMoniker": "Models\\Track.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Track.cs",
+              "RelativeToolTip": "Models\\Track.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T12:07:40.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Artist.cs",
+              "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Artist.cs",
+              "RelativeDocumentMoniker": "Models\\Artist.cs",
+              "ToolTip": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\Models\\Artist.cs",
+              "RelativeToolTip": "Models\\Artist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T11:55:50.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -34,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\hodac\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u041C\u0430\u0433\u0430 1 \u043A\u0443\u0440\u0441\\\u041E\u041E\u041F\\\u041B\u0430\u0431 2\\MusicCatalog\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
