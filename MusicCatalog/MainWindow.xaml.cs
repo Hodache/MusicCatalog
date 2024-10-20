@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MusicCatalog.Data;
+using MusicCatalog.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +22,13 @@ namespace MusicCatalog
         public MainWindow()
         {
             InitializeComponent();
+
+            Track testTrack = new Track { Title = "Test", Duration = 153 };
+            using (MusicCatalogContext db = new())
+            {
+                db.Tracks.Add(testTrack);
+                db.SaveChanges();
+            }
         }
     }
 }

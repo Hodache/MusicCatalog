@@ -1,7 +1,8 @@
 ﻿namespace MusicCatalog.Models
 {
-    class Genre(string name)
+    public class Genre
     {
-        public string Name { get; } = name;
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

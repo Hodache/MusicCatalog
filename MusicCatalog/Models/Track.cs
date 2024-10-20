@@ -1,10 +1,16 @@
-﻿namespace MusicCatalog.Models
+﻿using MusicCatalog.Models.MusicCollections;
+
+namespace MusicCatalog.Models
 {
-    class Track(string name, List<Artist> artists, int duration, Genre genre)
+    public class Track
     {
-        public string Title { get; } = name;
-        public List<Artist> Artists { get; } = artists;
-        public int Duration { get; } = duration;
-        public Genre Genre { get; } = genre;
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int Duration { get; set; }
+        public List<Artist> Artists { get; set; }
+
+        public List<Album> Albums { get; set; } = new();
+        public List<Playlist> Playlists { get; set; } = new();
+
     }
 }

@@ -1,8 +1,9 @@
 ﻿namespace MusicCatalog.Models.MusicCollections
 {
-    abstract class MusicCollection(string name, List<Track> tracks)
+    public abstract class MusicCollection
     {
-        public string Title { get; } = name;
-        public List<Track> Tracks { get; } = tracks;
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public List<Track> Tracks { get; set; } = new();
     }
 }

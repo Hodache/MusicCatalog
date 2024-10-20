@@ -1,9 +1,11 @@
 ﻿namespace MusicCatalog.Models
 {
-    class Artist(string name, string country, bool isActive)
+    public class Artist()
     {
-        public string Name { get; } = name;
-        public string Country { get; } = country;
-        public bool IsActive { get; } = isActive;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string? Country { get; set; }
+        public bool? IsActive { get; set; } 
+        public List<Track> Tracks { get; set; } = new();
     }
 }

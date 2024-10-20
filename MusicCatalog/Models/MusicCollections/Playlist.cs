@@ -1,8 +1,8 @@
 ﻿namespace MusicCatalog.Models.MusicCollections
 {
-    class Playlist(string name, List<Track> tracks, string description, DateTime lastUpdate)  : MusicCollection(name, tracks)
-    {
-        public string Description { get; } = description;
-        public DateTime LastUpdate { get; } = lastUpdate;
+    public class Playlist  : MusicCollection
+    { 
+        public string? Description { get; set; }
+        public DateTime LastUpdate { get; set; } 
     }
 }
