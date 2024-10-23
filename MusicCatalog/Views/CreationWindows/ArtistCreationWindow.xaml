@@ -1,0 +1,15 @@
+﻿<Window x:Class="MusicCatalog.Views.CreationWindows.ArtistCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows"
+        mc:Ignorable="d"
+        Title="Создание артиста" Height="124" Width="140" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Имя" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Страна" HorizontalAlignment="Left" Margin="10,33,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <CheckBox Content="Активен" HorizontalAlignment="Left" Margin="10,56,10,10" VerticalAlignment="Top" RenderTransformOrigin="0.266,0.312"/>
+        <Button Content="Создать" HorizontalAlignment="Left" Margin="70,78,10,10" VerticalAlignment="Top" Width="60"/>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="MusicCatalog.Views.CreationWindows.PlaylistCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows"
+        mc:Ignorable="d"
+        Title="Создание плейлиста" Height="289" Width="148" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название альбома" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..."/>
+        <DatePicker HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Width="128" Text="Посл. обновление"/>
+        <Button Content="Добавить трек" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Width="128"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,129,10,38"/>
+        <Button Content="Создать" HorizontalAlignment="Left" Margin="84,240,10,10" VerticalAlignment="Top" Width="54"/>
+        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Краткое описание" HorizontalAlignment="Center" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..." MaxLength="30" MaxLines="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Посл. обновление"/>
+
+    </Grid>
+</Window>

@@ -1,7 +1,6 @@
 ﻿using MusicCatalog.Models;
 using MusicCatalog.Models.MusicCollections;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace MusicCatalog.Data;
 
