@@ -3,31 +3,62 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MusicCatalog"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:MusicCatalog" 
+        xmlns:converters="clr-namespace:MusicCatalog.Views.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="334" Width="318" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <converters:StringToIntConverter x:Key="StringToIntConverter" />
+        
+        <!-- CollectionViewSource для группировки в ListBox -->
+        <CollectionViewSource x:Key="GroupedItems" Source="{Binding SearchResults}">
+            <CollectionViewSource.GroupDescriptions>
+                <!-- Группировка по свойству Type (тип элемента) -->
+                <PropertyGroupDescription PropertyName="CatalogObjectType" />
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Поиск" FontWeight="Bold"/>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Артист, трек, альбом" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..."/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,54,180,10" />
+        <TextBox Text="{Binding SearchText}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Артист, трек, альбом" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" AutomationProperties.HelpText="Имя артиста, название трека..."/>
+        <ListBox x:Name="searchListBox" ItemsSource="{Binding Source={StaticResource GroupedItems}}" SelectedItem="{Binding SelectedCatalogObject}" Margin="10,54,180,10" Width="128" MouseDoubleClick="ListBox_MouseDoubleClick" >
+            <ListBox.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" FontSize="16" Text="{Binding Name}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListBox.GroupStyle>
+
+            <!-- Шаблон для элементов в ListBox -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Designation}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="144,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Language="ru-ru" Text="Фильтры"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="198,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Общие"/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Margin="0,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Жанр"/></TextBlock>
-        <ComboBox HorizontalAlignment="Left" Margin="188,55,10,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox DropDownOpened="ComboBox_DropDownOpened" ItemsSource="{Binding Genres}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedGenre}" HorizontalAlignment="Left" Margin="188,55,10,0" VerticalAlignment="Top" Width="120" IsEditable="True" StaysOpenOnEdit="True" />
         <TextBlock HorizontalAlignment="Left" Margin="246,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="-"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="144,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Год"/></TextBlock>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="C" HorizontalAlignment="Left" Margin="188,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..." Text="1900"/>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="По" HorizontalAlignment="Left" Margin="258,84,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..." Text="2024"/>
+        <TextBox Text="{Binding StartYear, Converter={StaticResource StringToIntConverter}}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="C" HorizontalAlignment="Left" Margin="188,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..."/>
+        <TextBox Text="{Binding EndYear, Converter={StaticResource StringToIntConverter}}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="По" HorizontalAlignment="Left" Margin="258,84,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..."/>
         <TextBlock HorizontalAlignment="Left" Margin="201,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Треки"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="144,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Длительность (сек.)"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="201,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="-"/></TextBlock>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="От" HorizontalAlignment="Left" Margin="143,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..." Text="0"/>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="До" HorizontalAlignment="Left" Margin="213,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..." Text="360"/>
+        <TextBox Text="{Binding MinDuration, Converter={StaticResource StringToIntConverter}}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="От" HorizontalAlignment="Left" Margin="143,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..."/>
+        <TextBox Text="{Binding MaxDuration, Converter={StaticResource StringToIntConverter}}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="До" HorizontalAlignment="Left" Margin="213,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" AutomationProperties.HelpText="Имя артиста, название трека..."/>
         <TextBlock HorizontalAlignment="Left" Margin="144,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Language="ru-ru" Text="Создание"/></TextBlock>
         <Button Content="Создать артиста" HorizontalAlignment="Left" Margin="143,213,0,0" VerticalAlignment="Top" Width="108"/>
         <Button Content="Создать жанр" HorizontalAlignment="Left" Margin="143,238,0,0" VerticalAlignment="Top" Width="108"/>
-        <Button Content="Создать альбом" HorizontalAlignment="Left" Margin="144,263,0,35" Width="108"/>
-        <Button Content="Создать плейлист" HorizontalAlignment="Left" Margin="144,288,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Content="Создать альбом" HorizontalAlignment="Left" Margin="143,263,0,35" Width="108"/>
+        <Button Content="Создать плейлист" HorizontalAlignment="Left" Margin="143,288,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Command="{Binding SearchCommand}" Content="Поиск" HorizontalAlignment="Left" Margin="98,31,0,0" VerticalAlignment="Top" Width="40" Height="18"/>
 
     </Grid>
 </Window>

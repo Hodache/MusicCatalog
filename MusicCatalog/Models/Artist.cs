@@ -1,4 +1,6 @@
 ﻿using MusicCatalog.Models.MusicCollections;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MusicCatalog.Models
 {
@@ -12,19 +14,11 @@ namespace MusicCatalog.Models
         public List<Track> Tracks { get; set; } = new();
         public List<Album> Albums { get; set; } = new();
 
-        public string GetMusicObjectType() => "Артист";
-        public string GetName() => Name;
-        public string getFirstInfo() => Country ?? "";
-        public string getSecondInfo() => IsActive ? "Активен" : "Неактивен";
-        public string getAssociatedLabel() => "Выпущенные альбомы";
-        public Dictionary<string, IMusicCatalogObject> getAssociatedObjects()
-        {
-            Dictionary<string, IMusicCatalogObject> associatedObjects = new();
-            foreach (var album in Albums)
-            {
-                associatedObjects.Add(album.Title, album);
-            }
-            return associatedObjects;
-        }
+        public string Designation => Name;
+        public string CatalogObjectType => "Артист";
+        public string FirstInfo => Country ?? "";
+        public string SecondInfo => IsActive ? "Активен" : "Неактивен";
+        public string AssociatedLabel => "Выпущенные альбомы";
+        public List<IMusicCatalogObject> AssociatedObjects => Albums.Cast<IMusicCatalogObject>().ToList();
     }
 }

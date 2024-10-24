@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicCatalog.Data;
+using MusicCatalog.Models;
+using MusicCatalog.ViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MusicCatalog.Views
 {
     /// <summary>
-    /// Логика взаимодействия для TrackWindow.xaml
+    /// Логика взаимодействия для CatalogObjectWindow.xaml
     /// </summary>
-    public partial class TrackWindow : Window
+    public partial class CatalogObjectWindow : Window
     {
-        public TrackWindow()
+        public CatalogObjectWindow(IMusicCatalogObject catalogObject)
         {
             InitializeComponent();
+            DataContext = new CatalogObjectViewModel(catalogObject);
         }
     }
 }

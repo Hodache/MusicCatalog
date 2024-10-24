@@ -2,11 +2,11 @@
 {
     public interface IMusicCatalogObject
     {
-        public string GetMusicObjectType();
-        public string GetName();
-        public string getFirstInfo();
-        public string getSecondInfo();
-        public string getAssociatedLabel();
-        public Dictionary<string, IMusicCatalogObject> getAssociatedObjects();
+        public string CatalogObjectType { get; }
+        public string Designation { get; }
+        public string FirstInfo { get; }
+        public string SecondInfo { get; }
+        public string AssociatedLabel { get; }
+        public List<IMusicCatalogObject> AssociatedObjects { get; }
     }
 }
