@@ -1,15 +1,16 @@
 ﻿using MusicCatalog.Data;
 using MusicCatalog.Models;
 using MusicCatalog.Models.MusicCollections;
+using MusicCatalog.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
 namespace MusicCatalog.ViewModels
 {
-    class MainViewModel : INotifyPropertyChanged
+    internal class MainViewModel : INotifyPropertyChanged
     {
-        private readonly MusicCatalogContext db;
+        private readonly MusicCatalogContext db = new MusicCatalogContext();
 
         private ObservableCollection<IMusicCatalogObject> _searchResults;
         public ObservableCollection<IMusicCatalogObject> SearchResults
@@ -21,6 +22,7 @@ namespace MusicCatalog.ViewModels
                 OnPropertyChanged(nameof(SearchResults));
             }
         }
+
         private ObservableCollection<Genre> _genres;
         public ObservableCollection<Genre> Genres
         {
@@ -53,11 +55,10 @@ namespace MusicCatalog.ViewModels
         public ICommand SearchCommand { get; set; }
         public ICommand UpdateGenresListCommand { get; set; }
 
-        public MainViewModel(MusicCatalogContext db)
+        public MainViewModel()
         {
-            this.db = db;
             SearchCommand = new RelayCommand(ExecuteSearch);
-            UpdateGenresListCommand = new RelayCommand(UpdateGenresExecute);
+            UpdateGenresListCommand = new RelayCommand(ExecuteUpdateGenres);
         }
 
         public string SearchText
@@ -165,7 +166,7 @@ namespace MusicCatalog.ViewModels
             }
         }
 
-        private void UpdateGenresExecute()
+        private void ExecuteUpdateGenres()
         {
             Genres = new ObservableCollection<Genre>(db.Genres.ToList());
             Genres.Insert(0, new Genre { Name = "Любой" });

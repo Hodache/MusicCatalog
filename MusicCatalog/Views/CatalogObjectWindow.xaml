@@ -11,7 +11,7 @@
         <TextBlock x:Name="objectNameTextBlock" HorizontalAlignment="Left" Margin="10,26,10,10" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"><Run Language="ru-ru" Text="{Binding DisplayedCatalogObject.Designation, Mode=OneTime}"/></TextBlock>
         <TextBlock x:Name="objectInfoOneTextBlock" HorizontalAlignment="Left" Margin="10,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="{Binding DisplayedCatalogObject.FirstInfo, Mode=OneTime}"/></TextBlock>
         <TextBlock x:Name="objectInfoTwoTextBlock" HorizontalAlignment="Left" Margin="10,58,10,10" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="{Binding DisplayedCatalogObject.SecondInfo, Mode=OneTime}"/></TextBlock>
-        <ListBox ItemsSource="{Binding DisplayedCatalogObject.AssociatedObjects, Mode=OneTime}" Margin="10,107,10,10" Width="178" >
+        <ListBox ItemsSource="{Binding DisplayedCatalogObject.AssociatedObjects, Mode=OneTime}" Margin="10,107,10,10" Width="178" Height="97" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Designation, Mode=OneTime}"/>

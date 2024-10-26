@@ -3,21 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows" 
         mc:Ignorable="d"
-        Title="Создание альбома" Height="355" Width="152" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+        Title="Создание альбома" Height="355" Width="152" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Closing="Window_Closing">
     <Grid>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название альбома" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..."/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True"/>
+        <TextBox Text="{Binding TitleFieldValue, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название альбома" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..." MaxLines="1"/>
+        <ComboBox ItemsSource="{Binding Artists, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedItem="{Binding ArtistFieldValue}" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="DropDownOpened">
+                    <i:InvokeCommandAction Command="{Binding UpdateArtistsListCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Артист"/></TextBlock>
-        <DatePicker HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="128"/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True"/>
+        <DatePicker SelectedDate="{Binding DateFieldValue, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="128"/>
+        <ComboBox ItemsSource="{Binding Genres, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" SelectedItem="{Binding GenreFieldValue}" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="DropDownOpened">
+                    <i:InvokeCommandAction Command="{Binding UpdateGenresListCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Жанр"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="10,155,10,10" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Добавление тр"/><Run Language="ru-ru" Text="е"/><Run Text="ков"/></TextBlock>
-        <Button Content="Новый" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="54"/>
-        <Button Content="Сущ-ий" HorizontalAlignment="Left" Margin="83,171,0,0" VerticalAlignment="Top" Width="54"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,196,10,37"/>
-        <Button Content="Создать" HorizontalAlignment="Left" Margin="88,307,10,10" VerticalAlignment="Top" Width="54"/>
+        <Button x:Name="NewTrackButton" Content="Новый" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="54" Click="NewTrackButton_Click"/>
+        <Button x:Name="ExistingTrackButton" Content="Сущ-ий" HorizontalAlignment="Left" Margin="83,171,0,0" VerticalAlignment="Top" Width="54" Click="ExistingTrackButton_Click"/>
+        <ListBox ItemsSource="{Binding TracksList, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Designation" Margin="10,196,10,37" Width="132" Height="106"/>
+        <Button Command="{Binding CreateCommand}" IsEnabled="{Binding CreateCommand.CanExecute}" Content="Создать" HorizontalAlignment="Left" Margin="88,307,10,10" VerticalAlignment="Top" Width="54" Click="Button_Click"/>
 
     </Grid>
 </Window>

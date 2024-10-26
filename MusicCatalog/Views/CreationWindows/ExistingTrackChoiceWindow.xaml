@@ -3,12 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows"
         mc:Ignorable="d"
         Title="Добавление существующего трека" Height="116" Width="146" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="57,60,10,10" VerticalAlignment="Top" Width="73"/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,33,10,10" VerticalAlignment="Top" Width="120" IsEditable="True" StaysOpenOnEdit="True"/>
+        <Button Command="{Binding AddToAlbumCommand}" IsEnabled="{Binding AddToAlbumCommand.CanExecute}" Content="Добавить" HorizontalAlignment="Left" Margin="57,60,10,10" VerticalAlignment="Top" Width="73"/>
+        <ComboBox ItemsSource="{Binding Tracks}" DisplayMemberPath="Title" SelectedItem="{Binding SelectedTrack}" Text="{Binding TrackSearchText}" HorizontalAlignment="Left" Margin="10,33,10,10" VerticalAlignment="Top" Width="120" IsEditable="True" StaysOpenOnEdit="True" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="DropDownOpened">
+                    <i:InvokeCommandAction Command="{Binding UpdateTracksListCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="10,17,10,10" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Поиск и выбор трека"/></TextBlock>
 
     </Grid>

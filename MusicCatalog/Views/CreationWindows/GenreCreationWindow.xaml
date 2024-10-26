@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Создание жанра" Height="82" Width="140" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Создать" HorizontalAlignment="Left" Margin="70,33,10,10" VerticalAlignment="Top" Width="60"/>
+        <TextBox Text="{Binding NameFieldValue, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLines="1"/>
+        <Button Command="{Binding CreateCommand}" IsEnabled="{Binding CreateCommand.CanExecute}" Content="Создать" HorizontalAlignment="Left" Margin="70,33,10,10" VerticalAlignment="Top" Width="60" Click="Button_Click"/>
 
     </Grid>
 </Window>

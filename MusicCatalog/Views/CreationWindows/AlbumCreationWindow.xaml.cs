@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicCatalog.Data;
+using MusicCatalog.Models;
+using MusicCatalog.Services;
+using MusicCatalog.ViewModels.CreationViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MusicCatalog.Views.CreationWindows
 {
@@ -19,9 +11,42 @@ namespace MusicCatalog.Views.CreationWindows
     /// </summary>
     public partial class AlbumCreationWindow : Window
     {
+        MusicCatalogContext context = new MusicCatalogContext();
+        private TrackMediator trackMediator = new TrackMediator();
+
         public AlbumCreationWindow()
         {
             InitializeComponent();
+            DataContext = new AlbumCreationViewModel(context, trackMediator);
+        }
+
+        private void NewTrackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Artist albumArtist = (DataContext as AlbumCreationViewModel).ArtistFieldValue;
+            TrackCreationWindow trackCreationWindow = new TrackCreationWindow(context, trackMediator);
+            trackCreationWindow.Owner = this;
+            trackCreationWindow.Show();
+        }
+
+        private void ExistingTrackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Artist albumArtist = (DataContext as AlbumCreationViewModel).ArtistFieldValue;
+            ExistingTrackChoiceWindow existingTrackWindow = new ExistingTrackChoiceWindow(context, trackMediator);
+            existingTrackWindow.Owner = this;
+            existingTrackWindow.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            foreach (Window window in OwnedWindows)
+            {
+                window.Close();
+            }
         }
     }
 }

@@ -3,17 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:MusicCatalog.Views.CreationWindows"
+        xmlns:converters="clr-namespace:MusicCatalog.Views.Converters"
         mc:Ignorable="d"
         Title="Создание трека" Height="287" Width="153" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <converters:StringToIntConverter x:Key="StringToIntConverter" />
+    </Window.Resources>
     <Grid>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название трека" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..."/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,121,10,36"/>
-        <Button Content="Создать" HorizontalAlignment="Left" Margin="84,240,10,10" VerticalAlignment="Top" Width="54"/>
-        <TextBox Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Длительность (сек.)" HorizontalAlignment="Left" Margin="10,33,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..." MaxLength="30" MaxLines="3"/>
+        <TextBox Text="{Binding TitleFieldValue, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Название трека" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..." MaxLines="1"/>
+        <ListBox ItemsSource="{Binding Authors}" DisplayMemberPath="Name" Margin="10,121,10,36" Height="114" Width="133" />
+        <Button Command="{Binding AddToAlbumCommand}" IsEnabled="{Binding AddToAlbumCommand.CanExecute}" Content="Создать и добавить" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Width="133" Click="Button_Click"/>
+        <TextBox Text="{Binding DurationFieldValue, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToIntConverter}}" Style="{StaticResource PlaceholderTextBoxStyle}" Tag="Длительность (сек.)" HorizontalAlignment="Left" Margin="10,33,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" AutomationProperties.HelpText="Имя артиста, название трека..." MaxLength="30" MaxLines="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Выбор артистов"/></TextBlock>
-        <ComboBox HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True"/>
-        <Button Content="Добавить выбранного" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="128"/>
+        <ComboBox ItemsSource="{Binding Artists}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedArtistFieldValue}" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="128" IsEditable="True" StaysOpenOnEdit="True" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="DropDownOpened">
+                    <i:InvokeCommandAction Command="{Binding UpdateArtistsListCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
+        <Button Command="{Binding AddAuthorCommand}" IsEnabled="{Binding AddAuthorCommand.CanExecute}" Content="Добавить выбранного" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="128"/>
 
     </Grid>
 </Window>

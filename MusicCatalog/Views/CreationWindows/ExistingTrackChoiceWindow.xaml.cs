@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicCatalog.Data;
+using MusicCatalog.Services;
+using MusicCatalog.ViewModels.CreationViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MusicCatalog.Views.CreationWindows
 {
@@ -19,9 +10,10 @@ namespace MusicCatalog.Views.CreationWindows
     /// </summary>
     public partial class ExistingTrackChoiceWindow : Window
     {
-        public ExistingTrackChoiceWindow()
+        public ExistingTrackChoiceWindow(MusicCatalogContext context, TrackMediator trackMediator)
         {
             InitializeComponent();
+            DataContext = new ExistingTrackChoiceViewModel(context, trackMediator);
         }
     }
 }

@@ -15,12 +15,13 @@ public class MusicCatalogContext : DbContext
 
     public MusicCatalogContext()
     {
-        Database.EnsureDeleted();
+        //Database.EnsureDeleted();
         Database.EnsureCreated();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MusicCatalog;Trusted_Connection=True;");
     }
 }

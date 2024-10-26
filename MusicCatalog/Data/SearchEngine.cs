@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using MusicCatalog.Models;
 using MusicCatalog.Models.MusicCollections;
 
@@ -19,17 +20,17 @@ namespace MusicCatalog.Data
 
             if (genre != null)
             {
-                query = query.Where(a => a.Albums.Any(al => al.Genre == genre));
+                query = query.Where(a => a.Albums.Any(al => al.Genre == genre) || a.Albums.Count == 0);
             }
 
             if (startYear != null)
             {
-                query = query.Where(a => a.Albums.Any(al => al.ReleaseDate.Year >= startYear));
+                query = query.Where(a => a.Albums.Any(al => al.ReleaseDate.Year >= startYear) || a.Albums.Count == 0);
             }
 
             if (endYear != null)
             {
-                query = query.Where(a => a.Albums.Any(al => al.ReleaseDate.Year <= endYear));
+                query = query.Where(a => a.Albums.Any(al => al.ReleaseDate.Year <= endYear) || a.Albums.Count == 0);
             }
 
             return query;

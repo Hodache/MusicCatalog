@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicCatalog.Data;
+using MusicCatalog.Models;
+using MusicCatalog.Services;
+using MusicCatalog.ViewModels.CreationViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MusicCatalog.Views.CreationWindows
 {
@@ -19,9 +11,33 @@ namespace MusicCatalog.Views.CreationWindows
     /// </summary>
     public partial class PlaylistCreationWindow : Window
     {
+        MusicCatalogContext context = new MusicCatalogContext();
+        TrackMediator trackMediator = new TrackMediator();
+
         public PlaylistCreationWindow()
         {
             InitializeComponent();
+            DataContext = new PlaylistCreationViewModel(context, trackMediator);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ExistingTrackChoiceWindow existingTrackWindow = new ExistingTrackChoiceWindow(context, trackMediator);
+            existingTrackWindow.Owner = this;
+            existingTrackWindow.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            foreach (Window window in OwnedWindows)
+            {
+                window.Close();
+            }
         }
     }
 }

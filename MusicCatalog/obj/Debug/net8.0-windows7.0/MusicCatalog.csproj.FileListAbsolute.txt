@@ -149,3 +149,4 @@ C:\Users\hodac\OneDrive\Рабочий стол\Мага 1 курс\ООП\Ла�
 C:\Users\hodac\OneDrive\Рабочий стол\Мага 1 курс\ООП\Лаб 2\MusicCatalog\obj\Debug\net8.0-windows7.0\Views\CreationWindows\ExistingTrackChoiceWindow.g.cs
 C:\Users\hodac\OneDrive\Рабочий стол\Мага 1 курс\ООП\Лаб 2\MusicCatalog\obj\Debug\net8.0-windows7.0\Views\CreationWindows\ExistingTrackChoiceWindow.baml
 C:\Users\hodac\OneDrive\Рабочий стол\Мага 1 курс\ООП\Лаб 2\MusicCatalog\obj\Debug\net8.0-windows7.0\GeneratedInternalTypeHelper.g.cs
+C:\Users\hodac\OneDrive\Рабочий стол\Мага 1 курс\ООП\Лаб 2\MusicCatalog\bin\Debug\net8.0-windows7.0\Microsoft.Xaml.Behaviors.dll
